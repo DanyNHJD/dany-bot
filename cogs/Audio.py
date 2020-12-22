@@ -12,7 +12,7 @@ class Audio(commands.Cog):
     async def on_ready(self):
         print('Audio.py is loaded.')
 
-    @commands.command()
+    @commands.command(aliases=['play'])
     async def yt(self, ctx, *, search):
 
         query_string = urllib.parse.urlencode({'search_query': search})
@@ -21,7 +21,7 @@ class Audio(commands.Cog):
         search_results = re.findall(r'/watch\?v=(.{11})',
                                     htm_content.read().decode())
         await ctx.send('http://www.youtube.com/watch?v=' + search_results[0])
-        await ctx.send('Currently setting up the ability to play music in bots, hang tight!')
+        await ctx.send('Currently setting up the ability to play music in voice chat, hang tight!')
 
 def setup(danybot):
     danybot.add_cog(Audio(danybot))
