@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 from discord.utils import get
-import urllib.parse, irllib.request, re
+import urllib.parse, urllib.request, re
 
 class Audio(commands.Cog):
 
@@ -21,6 +21,7 @@ class Audio(commands.Cog):
         search_results = re.findall(r'/watch\?v=(.{11})',
                                     htm_content.read().decode())
         await ctx.send('http://www.youtube.com/watch?v=' + search_results[0])
+        await ctx.send('Currently setting up the ability to play music in bots, hang tight!')
 
 def setup(danybot):
-    danybot.add_cog(Admin(danybot))
+    danybot.add_cog(Audio(danybot))
