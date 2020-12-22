@@ -25,7 +25,7 @@ async def unload(ctx, extension):
 @danybot.command()
 async def reload(ctx, extension):
     danybot.unload_extension(f'cogs.{extension}')
-    danybot.load_extension(f'cogs.{extension}.')
+    danybot.load_extension(f'cogs.{extension}')
     await ctx.send(f'Reloaded {extension}.')
 
 
