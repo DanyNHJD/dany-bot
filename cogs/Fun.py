@@ -13,7 +13,7 @@ class Fun(commands.Cog):
 
 
     @commands.command(aliases=['8ball'])
-    async def eightball(self, ctx, *, question):
+    async def eightball(self, ctx, *, question=None):
         responses = [
         "It is certain",
         "Without a doubt",
@@ -35,6 +35,9 @@ class Fun(commands.Cog):
         "My sources say no",
         "Very doubtful",
         "My reply is no"]
+
+        if question == None: return await ctx.send('You need to type a question!')
+        
         await ctx.send(f"Question: {question}\nAnswer: {random.choice(responses)}")
 
     @commands.command()
