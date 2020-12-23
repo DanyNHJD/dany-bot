@@ -45,5 +45,9 @@ class Admin(commands.Cog):
                 await ctx.send(f'Unbanned {user.name}#{user.discriminator}')
                 return
 
+    @commands.command()
+    async def invite(self, ctx):
+        await ctx.send(f'**Invite link:**\nhttps://discord.com/api/oauth2/authorize?client_id=356977954934358026&permissions=8&scope=bot')
+
 def setup(danybot):
     danybot.add_cog(Admin(danybot))
