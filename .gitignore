@@ -5,3 +5,10 @@ __pycache__/
 
 # Keys
 .env
+
+# Audio Files
+*.mp3
+*.webm
+
+# Binary files
+*.exe

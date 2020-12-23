@@ -3,6 +3,9 @@ import os
 from discord.ext import commands
 from dotenv import load_dotenv
 
+# Allows debugging, will show errors in console.
+'debug' == True
+
 # Load token from .env file and set as variable
 load_dotenv()
 Token = os.getenv('DANYBOT_TOKEN')
@@ -52,13 +55,14 @@ async def on_ready():
     name="with nekos | d!help"))
     print("DanyBot is now ready.")
 
-#Ping test command
+# Ping test command
 @danybot.command()
 async def ping(ctx):
     await ctx.send(f'Pong! {round(danybot.latency * 1000)}ms')
 
-@danybot.event
-async def on_command_error(ctx, error):
-    pass
+if 'debug' == True:
+    @danybot.event
+    async def on_command_error(ctx, error):
+        pass
 
 danybot.run(Token)
