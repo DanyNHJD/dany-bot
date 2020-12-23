@@ -9,7 +9,7 @@ Token = os.getenv('DANYBOT_TOKEN')
 OwnerID = int(os.getenv('DANY_ID'))
 
 # Sets prefix for bot
-danybot = commands.Bot(command_prefix = 'd!')
+danybot = commands.Bot(command_prefix = commands.when_mentioned_or('d!'))
 
 # Other Variables
 cogs_path = './cogs'
