@@ -13,3 +13,9 @@ Discord bot that uses Discord.py, intended for use with friends.
  - d!ban [User] | Bans a user.
  
  - d!unban [User & #'s] | Unbans a user.
+ 
+ - d!play [Song name / URL] | Plays something from youtube to a VC.
+ 
+ 
+> Needed packages will be in the [requirements.txt](https://github.com/DanyNHJD/dany-bot/blob/main/requirements.txt) file.
+ - ffmpeg binarys in root will be needed to work the bot.
