@@ -18,7 +18,6 @@ class Admin(commands.Cog):
     #@commands.command()
     #async def status(self, ctx, status=None):
         #status_str = str(status)
-        #print(status_str)
         #if status_str != 'online' or 'idle' or 'offline' or 'dnd':
             #return await ctx.send(f'Please set a status to change! [online, idle, dnd, offline]')
         #await danybot.change_presence(f'status=discord.Status.{status_str}')
