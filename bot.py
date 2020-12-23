@@ -57,4 +57,8 @@ async def on_ready():
 async def ping(ctx):
     await ctx.send(f'Pong! {round(danybot.latency * 1000)}ms')
 
+@danybot.event
+async def on_command_error(ctx, error):
+    pass
+
 danybot.run(Token)
