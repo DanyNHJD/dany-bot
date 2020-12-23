@@ -2,11 +2,13 @@ import discord
 import youtube_dl
 import os
 import asyncio
+import ctypes
+import ctypes.util
+import urllib.parse, urllib.request, re
 from discord.ext import commands
 from discord.utils import get
 from discord.voice_client import VoiceClient
 from discord.ext.commands import Bot
-import urllib.parse, urllib.request, re
 from discord import FFmpegPCMAudio
 from os import system
 
@@ -19,6 +21,19 @@ ydl_opts = {
         'preferredquality': '192',
     }],
 }
+
+# Find Opus for Heroku
+print("ctypes - Find opus:")
+a = ctypes.util.find_library('opus')
+print(a)
+
+print("Discord - Load Opus:")
+b = discord.opus.load_opus(a)
+print(b)
+
+print("Discord - Is loaded:")
+c = discord.opus.is_loaded()
+print(c)
 
 def endSong(guild, path):
     os.remove(path)
